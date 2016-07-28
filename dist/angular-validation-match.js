@@ -35,7 +35,9 @@ function match ($parse) {
               var match = getMatchValue();
               var notMatch = noMatchGetter(scope);
               var value;
-
+              if (matcher===undefined &&match=="") {
+                 return true;
+              }
               if (matchIgnoreEmptyGetter(scope) && !viewValue) {
                 return true;
               }
